@@ -126,7 +126,7 @@ namespace Selenium.PageObject
 
         protected void SetSelectedOption(T element, IDropDownValue value, params string[] placeholders)
         {
-            SetSelectedOption(element, value.GetValue(), placeholders);
+            SetSelectedOption(element, value.Value, placeholders);
         }
 
         protected string GetSelectedOption(T element, params string[] placeholders)

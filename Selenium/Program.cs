@@ -1,4 +1,6 @@
-﻿namespace Selenium
+﻿using System;
+
+namespace Selenium
 {
     class Program
     {

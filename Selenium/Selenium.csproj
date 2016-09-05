@@ -86,12 +86,18 @@
   <ItemGroup>
     <Compile Include="By\ByFactory.cs" />
     <Compile Include="By\ByType.cs" />
+    <Compile Include="PageObject\Element\Impl\DropDownValue.cs" />
+    <Compile Include="PageObject\Impl\Results\Element\DropDown\SeasonDropDownValue.cs" />
+    <Compile Include="PageObject\Impl\Results\Element\DropDown\TournamentDropDownValue.cs" />
+    <Compile Include="PageObject\Impl\Results\Element\ResultRow.cs" />
+    <Compile Include="PageObject\Impl\Results\Element\ResultsPageElement.cs" />
+    <Compile Include="PageObject\Impl\Results\ResultsPage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="PageObject\Element\IDropDownValue.cs" />
     <Compile Include="PageObject\Element\IPlaceholdersProvider.cs" />
     <Compile Include="PageObject\Impl\Main\MainPage.cs" />
     <Compile Include="PageObject\Impl\Main\MainPageElement.cs" />
-    <Compile Include="MainPageTest.cs" />
+    <Compile Include="SampleTest.cs" />
     <Compile Include="PageObject\Element\Impl\PageElement.cs" />
     <Compile Include="PageObject\PageObject.cs" />
     <Compile Include="PageObject\Element\IPageElement.cs" />

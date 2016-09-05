@@ -2,6 +2,6 @@
 {
     interface IDropDownValue
     {
-        string GetValue();
+        string Value { get; }
     }
 }

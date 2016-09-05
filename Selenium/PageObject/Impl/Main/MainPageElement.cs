@@ -7,7 +7,7 @@ namespace Selenium.PageObject.Impl.Main
     {
         public static readonly MainPageElement RESULTS_LINK = new MainPageElement(ByType.XPATH, "//a[.=':: Wyniki']");
 
-        public MainPageElement(ByType byType, string expression) : base(byType, expression)
+        private MainPageElement(ByType byType, string expression) : base(byType, expression)
         {
         }
     }

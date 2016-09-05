@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using Selenium.PageObject.Impl.Results;
 
 namespace Selenium.PageObject.Impl.Main
 {
@@ -9,9 +10,10 @@ namespace Selenium.PageObject.Impl.Main
             SESSION.Navigate().GoToUrl(URL);
         }
 
-        public void ClickResultsPage()
+        public ResultsPage ClickResultsPage()
         {
             Click(MainPageElement.RESULTS_LINK);
+            return new ResultsPage(SESSION);
         }
     }
 }

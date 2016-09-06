@@ -97,11 +97,12 @@
     <Compile Include="PageObject\Element\IPlaceholdersProvider.cs" />
     <Compile Include="PageObject\Impl\Main\MainPage.cs" />
     <Compile Include="PageObject\Impl\Main\MainPageElement.cs" />
-    <Compile Include="SampleTest.cs" />
+    <Compile Include="Test\RealMadrid\SampleTest.cs" />
     <Compile Include="PageObject\Element\Impl\PageElement.cs" />
     <Compile Include="PageObject\PageObject.cs" />
     <Compile Include="PageObject\Element\IPageElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Test\SeleniumTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,21 +1,17 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 using Selenium.PageObject.Impl.Main;
 using Selenium.PageObject.Impl.Results;
 using Selenium.PageObject.Impl.Results.Element;
 using Selenium.PageObject.Impl.Results.Element.DropDown;
 
-namespace Selenium
+namespace Selenium.Test.RealMadrid
 {
     [TestFixture]
-    class SampleTest
+    class SampleTest : SeleniumTest
     {
         private const string DATE = "2014.08.12";
         private const string TOURNAMENT = "Superpuchar Europy - Cardiff";
         private const string MATCH = "Real - Sevilla 2 : 0";
-
-        private readonly IWebDriver SESSION = new FirefoxDriver();
 
         [Test]
         public void VerifyResult()

@@ -8,9 +8,9 @@ namespace Selenium.PageObject
 {
     class PageObject<T> where T : IPageElement
     {
-        protected static readonly TimeSpan DEFAULT_TIMEOUT = TimeSpan.FromSeconds(30);
-        protected static readonly TimeSpan ALERT_TIMEOUT = TimeSpan.FromSeconds(5);
-        protected static readonly string URL = "http://realmadrid.pl";
+        protected static readonly TimeSpan DEFAULT_TIMEOUT = Properties.Selenium.Default.DefaultTimeout;
+        protected static readonly TimeSpan ALERT_TIMEOUT = Properties.Selenium.Default.AlertTimeout;
+        protected static readonly string URL = Properties.Selenium.Default.Url;
         protected readonly IWebDriver SESSION;
 
         public PageObject(IWebDriver session)

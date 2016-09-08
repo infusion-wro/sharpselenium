@@ -3,6 +3,7 @@ using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using Selenium.PageObject.Element;
+using Selenium.Utils;
 
 namespace Selenium.PageObject
 {
@@ -56,9 +57,8 @@ namespace Selenium.PageObject
             }
 
             if (!valueAvailable) {
-                Console.WriteLine(
-                    "There is no option with visible text equal to %s in drop down. Visible options: %s.", visibleText,
-                    optionsTexts.ToString());
+                throw new SeleniumTestException("There is no option with visible text equal to {0} in drop down. Visible options: {1}.",
+                    visibleText, optionsTexts.ToString());
             }
 
             selectBox.SelectByText(visibleText);
@@ -66,8 +66,7 @@ namespace Selenium.PageObject
 
         private void WaitForPageToLoad(IWebElement controlElement)
         {
-            new WebDriverWait(SESSION, DEFAULT_TIMEOUT).Until(
-                ExpectedConditions.StalenessOf(controlElement));
+            new WebDriverWait(SESSION, DEFAULT_TIMEOUT).Until(ExpectedConditions.StalenessOf(controlElement));
         }
 
         private IAlert WaitGetAlert()
@@ -183,9 +182,8 @@ namespace Selenium.PageObject
 
         public void ShouldHaveEnabled(T element, params string[] placeholders)
         {
-            if (IsEnabled(element, placeholders)) {
-                Console.WriteLine("Element located by %s = '%s' is not enabled.", element.Type,
-                element.Expression);
+            if (!IsEnabled(element, placeholders)) {
+                throw new SeleniumTestException("Element located by {0} = '{1}' is not enabled.", element.Type, element.Expression);
             }
         }
 
@@ -195,7 +193,7 @@ namespace Selenium.PageObject
             if (alert.Text.Equals(alertMessage)) {
                 alert.Accept();
             } else {
-                Console.WriteLine("Expected alert with '%s' message but got '%s' message.", alertMessage, alert.Text);
+               throw new SeleniumTestException("Expected alert with '{0}' message but got '{1}' message.", alertMessage, alert.Text);
             }
         }
 
@@ -206,7 +204,7 @@ namespace Selenium.PageObject
             {
                 return;
             }
-            Console.WriteLine("Alert with '%s' message appeared.", alert.Text);
+            throw new SeleniumTestException("Alert with '{0}' message appeared.", alert.Text);
         }
     }
 }

@@ -8,11 +8,11 @@ namespace Selenium.Utils
         {
         }
 
-        public SeleniumTestException(string message) : base(message)
+        public SeleniumTestException(string message, params string[] placeholders) : base(string.Format(message, placeholders))
         {
         }
 
-        public SeleniumTestException(string message, Exception inner) : base(message, inner)
+        public SeleniumTestException(string message, Exception inner, params string[] placeholders) : base(string.Format(message, placeholders), inner)
         {
         }
     }
